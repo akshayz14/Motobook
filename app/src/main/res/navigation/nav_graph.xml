@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.apc.motobook.view.fragments.HomeFragment"
+        android:label="HomeFragment">
+        <action
+            android:id="@+id/action_homeFragment_to_addVehiclesFragment"
+            app:destination="@id/addVehiclesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_showVehiclesFragment"
+            app:destination="@id/showVehiclesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addVehiclesFragment"
+        android:name="com.apc.motobook.view.fragments.AddVehiclesFragment"
+        android:label="AddVehiclesFragment">
+        <action
+            android:id="@+id/action_addVehiclesFragment_to_homefragment"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/showVehiclesFragment"
+        android:name="com.apc.motobook.view.fragments.ShowVehiclesFragment"
+        android:label="fragment_show_vehicles"
+        tools:layout="@layout/fragment_show_vehicles">
+    </fragment>
+</navigation>

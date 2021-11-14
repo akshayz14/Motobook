@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="addvehicleFragmentViewModel"
+            type="com.apc.motobook.viewmodel.AddVehicleFragmentsViewModel" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:padding="@dimen/small_padding"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:text="@string/insurance_dialog_title_text"
+            android:textSize="@dimen/large_padding"
+            android:gravity="center"
+            android:textColor="@color/cardview_dark_background"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/cardview_dark_background" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/small_padding"
+                android:text="Insurance Name"
+                android:textSize="@dimen/std_text_size" />
+
+            <EditText
+                android:id="@+id/etInsuranceName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name of insurance"
+                android:text="@={addvehicleFragmentViewModel.insuranceName}"
+                android:inputType="text" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/small_padding"
+                android:text="Insurance expiry date"
+                android:textSize="@dimen/std_text_size" />
+
+            <EditText
+                android:id="@+id/etInsuranceExpiryDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Expiry date"
+                android:text="@={addvehicleFragmentViewModel.insuranceExpiryDateLiveData}"
+                android:inputType="date" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/small_padding"
+                android:text="Insurance Number"
+                android:textSize="@dimen/std_text_size" />
+
+            <EditText
+                android:id="@+id/etInsuranceNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Insurance number"
+                android:text="@={addvehicleFragmentViewModel.insuranceNumber}"
+                android:inputType="number" />
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btnAddInsuranceDetails"
+            android:layout_width="match_parent"
+            android:text="Add details"
+            android:padding="@dimen/small_padding"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+</layout>

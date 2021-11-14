@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="addvehicleFragmentViewModel"
+            type="com.apc.motobook.viewmodel.AddVehicleFragmentsViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".view.fragments.AddVehiclesFragment">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/small_padding"
+                    android:text="Type of vehicle"
+                    android:textSize="@dimen/std_text_size" />
+
+                <RadioGroup
+                    android:id="@+id/rgTypeOfVehicle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checkedButton="@={addvehicleFragmentViewModel.selectedRadioButtonLiveData}"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rbCar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Car"
+                        android:textSize="@dimen/small_text_size" />
+
+                    <RadioButton
+                        android:id="@+id/rbBike"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Bike"
+                        android:textSize="@dimen/small_text_size" />
+
+                    <RadioButton
+                        android:id="@+id/rbOther"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Other"
+                        android:textSize="@dimen/small_text_size" />
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/very_small_padding"
+                        android:text="Model"
+                        android:textSize="@dimen/std_text_size" />
+
+                    <EditText
+                        android:id="@+id/etModel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Model of vehicle"
+                        android:text="@={addvehicleFragmentViewModel.carModel}"
+                        android:inputType="text" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/small_padding"
+                        android:text="Last service Date"
+                        android:textSize="@dimen/std_text_size" />
+
+                    <EditText
+                        android:id="@+id/etLastServiceDate"
+                        android:layout_width="match_parent"
+                        android:focusable="true"
+                        android:layout_height="wrap_content"
+                        android:hint="Mention the last service date of your vehicle"
+                        android:text="@={addvehicleFragmentViewModel.lastServiceDateLiveData}" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/small_padding"
+                        android:text="Service interval"
+                        android:textSize="@dimen/std_text_size" />
+
+                    <EditText
+                        android:id="@+id/etServiceInterval"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Service interval in months"
+                        android:text="@={addvehicleFragmentViewModel.serviceInterval}"
+                        android:inputType="number" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/small_padding"
+                        android:text="Next service Date"
+                        android:textSize="@dimen/std_text_size" />
+
+                    <EditText
+                        android:id="@+id/etNextServiceDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Mention the next service date of your vehicle"
+                        android:inputType="date" />
+
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/small_padding"
+                        android:text="Registration number"
+                        android:textSize="@dimen/std_text_size" />
+
+                    <EditText
+                        android:id="@+id/etRegistration"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Registration number"
+                        android:text="@={addvehicleFragmentViewModel.registrationNumber}"
+                        android:inputType="number" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/small_padding"
+                        android:text="Insurance Expiry Date"
+                        android:textSize="@dimen/std_text_size" />
+
+
+                    <Button
+                        android:id="@+id/btnAddInsurance"
+                        android:layout_width="match_parent"
+                        android:layout_margin="@dimen/small_padding"
+                        android:layout_height="wrap_content"
+                        android:text="@string/add_insurance_details"/>
+
+                </LinearLayout>
+
+
+                <Button
+                    android:id="@+id/btnAdd"
+                    android:layout_width="match_parent"
+                    android:layout_margin="@dimen/std_margin"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{()->addvehicleFragmentViewModel.saveData()}"
+                    android:text="Add Vehicle" />
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
+
+    </LinearLayout>
+
+</layout>
